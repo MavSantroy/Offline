@@ -53,12 +53,12 @@ const raceTemplates = {
 window.addEventListener("DOMContentLoaded", () => {
   initNavigation();
   initRaceDropdown();
-  initSaveAndLoad();  // ✅ Ensure this is here
+  initSaveAndLoad(); // Ensure this function is called
   updateMainPageAttributes();
   initCombinedModifiersTable();
-  initCommonStatsTable();
   startAutosave();
 });
+
 
 /************************************************
  * Navigation Logic
@@ -134,37 +134,19 @@ function initSaveAndLoad() {
 
   if (saveBtn) {
     saveBtn.addEventListener("click", saveCharacterToFile);
+    console.log("Save button initialized.");
+  } else {
+    console.error("Save button not found.");
   }
 
   if (loadBtn) {
-    loadBtn.addEventListener("click", function () {
-      console.log("Load button clicked!"); // Debug log
-      loadCharacterFromFile();
-    });
+    loadBtn.addEventListener("click", loadCharacterFromFile);
+    console.log("Load button initialized.");
   } else {
-    console.error("Load button not found in the document.");
+    console.error("Load button not found.");
   }
 }
 
-function saveCharacterToFile() {
-  const name = document.getElementById("char-name").value.trim();
-  if (!name) {
-    alert("Please enter a character name before saving.");
-    return;
-  }
-
-  characterData.name = name;
-
-  const json = JSON.stringify(characterData, null, 2);
-  const blob = new Blob([json], { type: "application/json" });
-
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-
-  const fileName = `${name}.json`;
-  link.download = fileName;
-  link.click();
-}
 /************************************************
  * Load Character (Ensuring Functionality)
  ************************************************/
