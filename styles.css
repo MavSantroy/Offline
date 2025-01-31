@@ -1,0 +1,356 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Verdana", "Geneva", sans-serif;
+}
+
+/* Body and Background */
+body {
+  background-color: #000; /* Black background */
+  color: #ccc;           /* Silver-ish text */
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111; 
+  border-bottom: 1px solid #222;
+}
+
+.title {
+  color: #0ff; /* Teal highlight */
+}
+
+/* Tab Navigation */
+.tab-nav {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  background-color: #111;
+  padding: 0.5rem;
+}
+
+.tab-button {
+  background-color: transparent;
+  border: 1px solid #0ff;
+  color: #0ff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.tab-button:hover {
+  background-color: rgba(0, 255, 255, 0.2);
+}
+.tab-button.active {
+  background-color: rgba(0, 255, 255, 0.4);
+}
+
+/* Tab Content */
+.tab-content {
+  display: none; 
+  padding: 1rem;
+}
+.tab-content.active {
+  display: block; 
+}
+
+/* Section Box */
+.section {
+  background-color: #111;
+  border: 1px solid #0ff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.section h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Core Attributes */
+.core-attributes-box {
+  margin-bottom: 1rem;
+}
+.core-attributes-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.core-attributes-table td {
+  padding: 0.5rem;
+  vertical-align: middle;
+}
+.attr-display {
+  width: 60px;
+  background-color: #000;
+  color: #ccc;
+  border: 1px solid #0ff;
+  border-radius: 4px;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+  text-align: right;
+}
+
+/* Quick Reference Grid */
+.quick-ref-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.quick-ref-grid div label {
+  color: #ccc;
+  margin-right: 0.5rem;
+}
+.quick-ref-grid div span {
+  color: #0ff;
+}
+
+/* Top Controls */
+.top-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.top-controls label {
+  color: #ccc;
+}
+
+.top-controls input, .top-controls select {
+  background: #000;
+  color: #ccc;
+  border: 1px solid #0ff;
+  border-radius: 4px;
+  padding: 0.25rem;
+}
+
+.top-controls button {
+  background-color: transparent;
+  border: 1px solid #0ff;
+  color: #0ff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+#race-dropdown {
+  background-color: #000;
+  color: #0ff;
+  border: 1px solid #0ff;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  border-radius: 4px;
+}
+
+.section h3 {
+  color: #ccc;
+  margin-top: 1rem;
+}
+
+.template-and-modifiers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #00ffff;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #222;
+}
+
+/* Core Attributes Section */
+.core-attributes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 8px; /* Add spacing between rows and columns */
+  padding: 10px; /* Add padding inside the section */
+  border: 1px solid #00ffff; /* Cyan border for visual separation */
+  border-radius: 8px;
+  background-color: #222; /* Dark background to match theme */
+}
+
+.core-attributes h3 {
+  grid-column: span 2; /* Span the header across both columns */
+  text-align: center; /* Center the header */
+  margin-bottom: 10px;
+  font-size: 1.2rem; /* Slightly larger font for the header */
+  color: #00ffff; /* Cyan color for the header */
+}
+
+.attr-row {
+  display: flex;
+  justify-content: space-between; /* Align labels and values */
+  padding: 2px 8px; /* Add spacing inside each row */
+}
+
+.attr-row label {
+  font-weight: bold;
+  color: #ffffff; /* White text for labels */
+}
+
+.attr-row span {
+  color: #00ffff; /* Cyan text for values */
+}
+/* Race Templates and Modifiers Section */
+.template-and-modifiers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add spacing between the dropdown and the table */
+  padding: 15px; /* Add padding inside the box */
+  border: 1px solid #00ffff; /* Cyan border */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #222; /* Dark background */
+}
+
+.template-and-modifiers label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff; /* White label text */
+  margin-bottom: 5px; /* Add spacing below the label */
+}
+
+.template-and-modifiers select {
+  width: 100%; /* Full width dropdown */
+  padding: 8px; /* Add padding inside the dropdown */
+  font-size: 1rem; /* Increase font size for readability */
+  border: 1px solid #00ffff; /* Cyan border */
+  border-radius: 5px; /* Slightly rounded corners */
+  background-color: #333; /* Dark background for dropdown */
+  color: #00ffff; /* Cyan text */
+}
+
+/* Table Styling */
+#modifiers-table {
+  width: 100%; /* Full width table */
+  border-collapse: collapse; /* Remove double borders */
+  margin-top: 10px; /* Add spacing above the table */
+}
+
+#modifiers-table th,
+#modifiers-table td {
+  padding: 10px; /* Add padding inside cells */
+  text-align: left; /* Align text to the left */
+  border-bottom: 1px solid #444; /* Add a subtle bottom border */
+}
+
+#modifiers-table th {
+  color: #00ffff; /* Cyan header text */
+  font-weight: bold;
+  background-color: #333; /* Dark background for header */
+}
+
+#modifiers-table td {
+  color: #ffffff; /* White text for table cells */
+}
+
+/* General Styling */
+.section h3 {
+  font-size: 1.2rem;
+  color: #00ffff; /* Cyan section title */
+  margin-bottom: 10px; /* Add spacing below the title */
+  text-align: center; /* Center align the title */
+}
+
+/* Combined Modifiers Table Styling */
+.table-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  border: 1px solid #0ff; /* Add border to the container */
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #111; /* Dark background */
+}
+
+#combined-modifiers-table {
+  width: 100%; /* Ensure full width */
+  border-collapse: collapse; /* Remove cell spacing */
+}
+
+#combined-modifiers-table th, #combined-modifiers-table td {
+  padding: 8px; /* Add padding for spacing */
+  text-align: center; /* Center align text */
+  color: #0ff; /* Teal text */
+  border: 1px solid #444; /* Border for table cells */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+#combined-modifiers-table th {
+  background-color: #222; /* Darker header background */
+  font-weight: bold;
+}
+
+#combined-modifiers-table td input {
+  width: 50px; /* Constrain input width */
+  background-color: #000; /* Match table background */
+  color: #0ff; /* Teal text */
+  border: 1px solid #0ff; /* Teal border */
+  text-align: center; /* Center align input text */
+  padding: 4px; /* Add padding for better look */
+  border-radius: 4px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #combined-modifiers-table td input {
+    width: 40px; /* Adjust input size for smaller screens */
+    font-size: 0.9rem; /* Reduce font size */
+  }
+
+  #combined-modifiers-table th, #combined-modifiers-table td {
+    padding: 6px; /* Reduce cell padding */
+  }
+}
+
+/* Scrollable Table Container */
+.scrollable-table-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  border: 1px solid #0ff; /* Cyan border for clarity */
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.scrollable-table-container table {
+  width: 100%; /* Allow table to expand horizontally */
+  border-collapse: collapse;
+}
+
+.scrollable-table-container th, .scrollable-table-container td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #444;
+}
+
+.scrollable-table-container th {
+  background-color: #333; /* Dark header background */
+  color: #0ff; /* Cyan text for headers */
+}
+
+.scrollable-table-container td {
+  background-color: #111; /* Dark background for cells */
+  color: #ccc; /* Lighter text for readability */
+}
+#common-stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#common-stats-table th,
+#common-stats-table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #444;
+}
+
+#common-stats-table th {
+  background-color: #333;
+  color: #0ff;
+  font-weight: bold;
+}
+
+#common-stats-table td input {
+  width: 100%;
+  background-color: #000;
+  color: #0ff;
+  border: 1px solid #0ff;
+  text-align: center;
+}

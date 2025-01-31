@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Character Sheet – Sci-Fi Hologram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <h1 class="title">Character Sheet – Sci-Fi Hologram</h1>
+  </div>
+
+  <!-- Character Name + Save/Load Buttons -->
+  <div class="top-controls">
+    <label for="char-name">Character Name:</label>
+    <input type="text" id="char-name" placeholder="Enter Name..." />
+    <button id="save-btn">Save</button>
+    <button id="load-btn">Load Character</button>
+  </div>  
+
+  <!-- Tab Navigation -->
+  <nav class="tab-nav">
+    <button id="main-page-btn" class="tab-button active">Main</button>
+    <button id="modifiers-page-btn" class="tab-button">Modifiers</button>
+  </nav>
+
+  <!-- Main Page -->
+  <div id="main-page" class="tab-content">
+    <h2>Main Page</h2>
+    <div class="section">
+      <h3>Core Attributes</h3>
+      <div class="attr-row"><label>STR:</label><span id="str-display">0</span></div>
+      <div class="attr-row"><label>DEX:</label><span id="dex-display">0</span></div>
+      <div class="attr-row"><label>CON:</label><span id="con-display">0</span></div>
+      <div class="attr-row"><label>INT:</label><span id="int-display">0</span></div>
+      <div class="attr-row"><label>WIS:</label><span id="wis-display">0</span></div>
+      <div class="attr-row"><label>CHA:</label><span id="cha-display">0</span></div>
+    </div>
+  </div>
+
+  <!-- Modifiers Page -->
+  <div id="modifiers-page" class="tab-content" style="display: none;">
+    <h2>Modifiers</h2>
+
+    <!-- Race Selection -->
+    <div class="section">
+      <h3>Race Templates</h3>
+      <label for="race-dropdown">Select Race:</label>
+      <select id="race-dropdown">
+        <option value="Custom">Custom</option>
+        <option value="Talaxian">Talaxian</option>
+        <option value="Thorn">Thorn</option>
+        <option value="Sollox">Sollox</option>
+      </select>
+    </div>
+
+    <!-- Combined Modifiers Section -->
+    <div class="section">
+      <h3>Combined Modifiers</h3>
+      <div class="scrollable-table-container">
+        <table id="combined-modifiers-table">
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              <th>Total</th>
+              <th>Racial</th>
+              <th>GE</th>
+              <th>Cyb</th>
+              <th>Temp</th>
+              <th>Art</th>
+              <th>Psi</th>
+              <th>Misc</th>
+              <th>Neg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+      <!-- Common Stats Section -->
+    <div class="section">
+      <h3>Common Stats</h3>
+      <table id="common-stats-table">
+        <thead>
+          <tr>
+            <th>Stat</th>
+            <th>Total</th>
+            <th>Base</th>
+            <th>GE</th>
+            <th>Cyb</th>
+            <th>Temp</th>
+            <th>Art</th>
+            <th>Psi</th>
+            <th>Misc</th>
+            <th>Neg</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be dynamically populated -->
+        </tbody>
+      </table>
+    </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
